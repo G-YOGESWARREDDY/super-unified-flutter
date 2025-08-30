@@ -1,39 +1,12 @@
-import { useState } from "react";
-import BottomNavigation from "@/components/layout/BottomNavigation";
-import HomePage from "@/pages/HomePage";
-import FoodPage from "@/pages/FoodPage";
-import ShoppingPage from "@/pages/ShoppingPage";
-import RidesPage from "@/pages/RidesPage";
-import ProfilePage from "@/pages/ProfilePage";
+// Update this page (the content is just a fallback if you fail to update the page)
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState("home");
-
-  const handleServiceSelect = (service: string) => {
-    setActiveTab(service);
-  };
-
-  const renderActivePage = () => {
-    switch (activeTab) {
-      case "home":
-        return <HomePage onServiceSelect={handleServiceSelect} />;
-      case "food":
-        return <FoodPage />;
-      case "shopping":
-        return <ShoppingPage />;
-      case "rides":
-        return <RidesPage />;
-      case "profile":
-        return <ProfilePage />;
-      default:
-        return <HomePage onServiceSelect={handleServiceSelect} />;
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-background">
-      {renderActivePage()}
-      <BottomNavigation activeTab={activeTab} onTabChange={setActiveTab} />
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
+        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+      </div>
     </div>
   );
 };
